@@ -28,8 +28,9 @@ void serchStudent (){
 	try{
 		cin >> i;
 		try{
-			if(studentMap.find(i) != studentMap.end()){
-				cout << "Name : " <<studentMap.find(i) <<" ID " << studentMap.find(i) <<" .\n";}
+			auto s = studentMap.find(i);
+			if(s != studentMap.end()){
+				cout << "Name : "<<s->second  <<" ID " << s->first <<" .\n";}
 		}catch(...){
 		
 		}
@@ -40,7 +41,7 @@ void serchStudent (){
 }
 
 
-void exit(){
+void appExit(){
 	system("clear");
 	app = 0;
 }
@@ -77,7 +78,7 @@ int main(){;
 					addStudent();
 					break;
 				case 4:
-					exit();
+					appExit();
 					break;
 		
 			}
